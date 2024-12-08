@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to bottom, #00FFFC, #9C00FF);
+    background-size: 400% 400%;
+    animation: backgroundAnimation 15s infinite;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.drop {
+    position: absolute;
+    background: radial-gradient(circle, #00FFFC, #9C00FF);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 255, 252, 0.8), 0 0 30px rgba(156, 0, 255, 0.8);
+    transition: transform 0.3s ease, opacity 0.5s ease;
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(3);
+    }
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
